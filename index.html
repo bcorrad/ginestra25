@@ -3,14 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Project</title>
+    <title>GINESTRA: Graph-based Embeddings for Natural Product Classification</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 40px; }
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #f7fafc;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2d3748;
+            color: #fff;
+            padding: 2.5rem 1rem 1.5rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+        }
+        header h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0 0 1rem 0;
+            color: #cbd5e1;
+        }
+        .badges img {
+            margin: 0 0.3rem;
+            vertical-align: middle;
+        }
+        main {
+            max-width: 820px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px #0001;
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h3 {
+            color: #2b6cb0;
+            margin-top: 0;
+        }
+        code, pre {
+            background: #f1f5f9;
+            border-radius: 5px;
+            padding: 0.2em 0.4em;
+            font-size: 1em;
+        }
+        pre {
+            padding: 1em;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 0.5em 0 0.5em 1.5em;
+        }
+        .repo-structure {
+            background: #f8fafc;
+            border-left: 4px solid #2b6cb0;
+            padding: 1em 1.5em;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 0.98em;
+        }
+        .contact {
+            background: #e6fffa;
+            border-left: 4px solid #319795;
+            padding: 1em 1.5em;
+            border-radius: 6px;
+        }
+        a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            main { padding: 1rem; }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Awesome Project!</h1>
-    <p>This is the official project page.</p>
-    <p>Check out the code <a href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME">on GitHub</a>.</p>
+    <header>
+        <h1>GINESTRA</h1>
+        <h2><b>G</b>raph-based <b>embeddIN</b>gs for <b>E</b>xploring <b>S</b>econdary-metabolite <b>T</b>axonomy, <b>R</b>ecognition, and <b>A</b>nnotation</h2>
+        <div class="badges">
+            <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
+            <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+">
+            <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=pytorch&logoColor=white" alt="PyTorch">
+        </div>
+        <p style="margin-top:1.2rem;">
+            <a href="https://github.com/YOUR_USERNAME/GINESTRA" target="_blank">View on GitHub</a>
+        </p>
+    </header>
+    <main>
+        <section>
+            <h3>Overview</h3>
+            <p>
+                <b>GINESTRA</b> explores the application of Graph Neural Network (GNN) architectures to the challenge of classifying natural products and secondary metabolites directly from their molecular graphs.
+                <br><br>
+                Natural Products (NPs) are a rich source of bioactive compounds with high structural diversity and therapeutic potential. Automatic classification of NPs is critical for safety, regulatory compliance, and the discovery of new pharmacologically relevant molecules. Traditional rule-based approaches and hand-crafted molecular fingerprints often fall short in capturing the complexity of NPs.
+                <br><br>
+                GNNs can model both the topology and local chemical environments of molecules. We evaluate multiple GNN architectures on curated NP datasets and assess their ability to generalize across hierarchical classification targets. Our findings highlight the potential of GNNs as effective tools for NP classification and encourage broader adoption of deep learning in natural product research and drug discovery.
+            </p>
+        </section>
+
+        <section>
+            <h3>Models Implemented</h3>
+            <ul>
+                <li><b>GCN</b> (Graph Convolutional Network)</li>
+                <li><b>GAT</b> (Graph Attention Network)</li>
+                <li><b>GIN</b> (Graph Isomorphism Network)</li>
+                <li><b>GINE</b> (Graph Isomorphism Network with Edge Features)</li>
+                <li><b>GATE</b> (Graph Attention Network with Edge Features)</li>
+                <li><b>MLP</b> (Multi-Layer Perceptron, as a baseline)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Installation</h3>
+            <ol>
+                <li>
+                    <b>Clone the repository:</b>
+                    <pre><code>git clone https://github.com/YOUR_USERNAME/GINESTRA.git
+cd GINESTRA</code></pre>
+                </li>
+                <li>
+                    <b>Create a virtual environment (recommended):</b>
+                    <pre><code>python -m venv venv
+source venv/bin/activate  # On Windows use venv\Scripts\activate</code></pre>
+                </li>
+                <li>
+                    <b>Install the required packages:</b>
+                    <pre><code>bash ./setup/packages_installer.sh</code></pre>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Usage</h3>
+            <ol>
+                <li>
+                    <b>Configuration:</b>  
+                    All hyperparameters, dataset paths, and experiment settings can be configured in the <code>config.py</code> file. The <code>PARAM_GRID</code> dictionary defines the search space for manual grid search.
+                </li>
+                <li>
+                    <b>Running an Experiment:</b>  
+                    To run an experiment for a specific model, execute its script. For example, to run the GIN model:
+                    <pre><code>python GIN_main.py</code></pre>
+                    The script will:
+                    <ul>
+                        <li>Load the dataset specified in <code>config.py</code></li>
+                        <li>Iterate through all hyperparameter combinations in <code>PARAM_GRID</code></li>
+                        <li>Train and evaluate the model for <code>N_RUNS</code> with different random seeds</li>
+                        <li>Apply early stopping</li>
+                        <li>Save the best model weights, logs, and statistics in <code>experiments/</code></li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Repository Structure</h3>
+            <div class="repo-structure">
+<pre>
+GINESTRA/
+├── experiments/      # Output directory for models, logs, and reports
+├── data/             # Directory for datasets
+├── models/           # GNN model definitions (.py files)
+│   ├── GIN.py
+│   └── ...
+├── utils/            # Utility functions (early stopping, seeding, etc.)
+│   ├── earlystop.py
+│   └── ...
+├── config.py         # Main configuration file
+├── GIN_main.py       # Experiment script for GIN
+├── GCN_main.py       # Experiment script for GCN
+└── README.md         # This file
+</pre>
+            </div>
+        </section>
+
+        <section>
+            <h3>Citation</h3>
+            <p>
+                If you use this code or the ideas presented in our work, please cite our paper:
+            </p>
+            <pre><code>@inproceedings{moleculargnp2025,
+  author    = {Prete, Alessia Lucia and Corradini, Barbara Toniella and Costanti, Filippo and Scarselli, Franco and Bianchini, Monica},
+  title     = {Leveraging Molecular Graphs for Natural Product Classification},
+  booktitle = {Computers in Biology and Medicine},
+  year      = {2025},
+  note      = {Under review}
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>License</h3>
+            <p>
+                This project is licensed under the MIT License. See the <a href="https://github.com/YOUR_USERNAME/GINESTRA/blob/main/LICENSE" target="_blank">LICENSE</a> file for details.
+            </p>
+        </section>
+
+        <section>
+            <h3>Contact</h3>
+            <div class="contact">
+                For questions about the code or the paper, please contact <a href="mailto:alessia.prete@example.com">alessia.prete@example.com</a> or open an issue on <a href="https://github.com/YOUR_USERNAME/GINESTRA" target="_blank">GitHub</a>.
+            </div>
+        </section>
+    </main>
 </body>
 </html>
